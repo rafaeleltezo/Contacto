@@ -25,14 +25,9 @@ public class Contactos extends AppCompatActivity {
         Button boton=(Button) findViewById(R.id.boton);
         Intent intento=new Intent(Contactos.this,Persona.class);
         intento.putExtra("nombre",nombre.getText().toString());
-
-        boton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Snackbar.make(v,"",Snackbar.LENGTH_SHORT).show();
-            }
-        });
+        intento.putExtra("telefono",numero.getText().toString());
+        intento.putExtra("email",email.getText().toString());
+        intento.putExtra("descipcion",descripcion.getText().toString());
 
     }
 
