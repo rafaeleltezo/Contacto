@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Contacto</string>
+    <string name="Tnombre">Nombre Completo</string>
+    <string name="Ttelefono">Teléfono</string>
+    <string name="Temail">Email</string>
+    <string name="Tdescripcion">Descripción del contacto</string>
+    <string name="Tboton">Siguiente</string>
+</resources>
