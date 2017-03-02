@@ -5,4 +5,5 @@
     <string name="Temail">Email</string>
     <string name="Tdescripcion">Descripción del contacto</string>
     <string name="Tboton">Siguiente</string>
+    <string name="TbotonPersona">Editar</string>
 </resources>
