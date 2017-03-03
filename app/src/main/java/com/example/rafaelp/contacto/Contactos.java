@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Date;
 
@@ -19,11 +20,11 @@ public class Contactos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contactos);
-        nombre= (TextView) findViewById(R.id.nombre);
-        calendario=(CalendarView) findViewById(R.id.calendario);
-        numero=(TextView) findViewById(R.id.telefono);
-        email=(TextView) findViewById(R.id.email);
-        descripcion=(TextView) findViewById(R.id.Descripción);
+        nombre= (TextView) findViewById(R.id.Cnombre);
+        calendario=(CalendarView) findViewById(R.id.Ccalendario);
+        numero=(TextView) findViewById(R.id.Ctelefono);
+        email=(TextView) findViewById(R.id.Cemail);
+        descripcion=(TextView) findViewById(R.id.CDescripción);
         Button boton=(Button) findViewById(R.id.boton);
         intento=new Intent(Contactos.this,Persona.class);
         boton.setOnClickListener(new View.OnClickListener() {
@@ -34,10 +35,8 @@ public class Contactos extends AppCompatActivity {
                 intento.putExtra("email",email.getText().toString());
                 intento.putExtra("descipcion",descripcion.getText().toString());
                 startActivity(intento);
+
             }
         });
-
-
     }
-
 }

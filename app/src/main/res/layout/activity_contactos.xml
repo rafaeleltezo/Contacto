@@ -28,12 +28,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/Tnombre"
-        android:id="@+id/nombre"
+        android:id="@+id/Cnombre"
         />
     <CalendarView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/calendario"
+        android:id="@+id/Ccalendario"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -44,19 +44,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/Ttelefono"
-        android:id="@+id/telefono"
+        android:id="@+id/Ctelefono"
         />
     <android.support.design.widget.TextInputEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/Temail"
-        android:id="@+id/email"
+        android:id="@+id/Cemail"
         />
     <android.support.design.widget.TextInputEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/Tdescripcion"
-        android:id="@+id/Descripción"
+        android:id="@+id/CDescripción"
         />
 
         </LinearLayout>
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/boton"
             android:text="@string/Tboton"
-            android:layout_below="@id/Descripción"
+            android:layout_below="@id/CDescripción"
             />
     </android.support.design.widget.TextInputLayout>
 

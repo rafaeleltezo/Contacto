@@ -9,13 +9,15 @@ import android.widget.TextView;
 
 public class Persona extends AppCompatActivity {
     public Intent intento;
+    public Bundle b;
+    TextView nombre;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_persona);
-        Bundle b=getIntent().getExtras();
+        b=getIntent().getExtras();
         TextView nombre=(TextView)findViewById(R.id.nombre);
-        TextView fecha=(TextView)findViewById(R.id.calendario);
+        TextView fecha=(TextView)findViewById(R.id.fecha);
         TextView numero=(TextView)findViewById(R.id.numero);
         TextView email=(TextView)findViewById(R.id.email);
         TextView descripcion =(TextView)findViewById(R.id.descripcion);
@@ -28,9 +30,21 @@ public class Persona extends AppCompatActivity {
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(intento);
+
+
             }
         });
 
+    }
+    public void rellenandoCampos(){
+        TextView nombre=(TextView) findViewById(R.id.Cnombre);
+        TextView telefono=(TextView) findViewById(R.id.Ctelefono);
+        TextView email=(TextView) findViewById(R.id.Cemail);
+        TextView descripcion=(TextView) findViewById(R.id.CDescripción);
+        nombre.setText(this.nombre.getText().toString());
+        telefono.setText(b.getString("numero"));
+        email.setText(b.getString("email"));
+        descripcion.setText(b.getString("descripcion"));
+        startActivity(intento);
     }
 }
