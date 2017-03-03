@@ -30,7 +30,8 @@ public class Persona extends AppCompatActivity {
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                rellenandoCampos();
+                startActivity(intento);
 
             }
         });
