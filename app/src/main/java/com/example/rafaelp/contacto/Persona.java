@@ -31,5 +31,6 @@ public class Persona extends AppCompatActivity {
                 startActivity(intento);
             }
         });
+
     }
 }
