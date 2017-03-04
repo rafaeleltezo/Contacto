@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Date;
+import java.util.TimeZone;
+
 public class Persona extends AppCompatActivity {
     public Intent intento;
     public Bundle b;
@@ -25,7 +28,10 @@ public class Persona extends AppCompatActivity {
         numero=(TextView)findViewById(R.id.numero);
         email=(TextView)findViewById(R.id.email);
         descripcion =(TextView)findViewById(R.id.descripcion);
+        //Definiedo contenido de campos
+
         nombre.setText(b.getString("nombre"));
+        fecha.setText(b.getString("fecha"));
         numero.setText(b.getString("telefono"));
         email.setText(b.getString("email"));
         descripcion.setText(b.getString("descripcion"));

@@ -10,18 +10,25 @@ import android.widget.CalendarView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Contactos extends AppCompatActivity {
     public CalendarView calendario;
     Intent intento;
     public TextView nombre,numero,email,descripcion;
+    String currentdate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contactos);
         nombre= (TextView) findViewById(R.id.Cnombre);
         calendario=(CalendarView) findViewById(R.id.Ccalendario);
+        Calendar c=Calendar.getInstance();
+        SimpleDateFormat ss = new SimpleDateFormat("dd-MM-yyyy");
+        Date d=new Date(calendario.getDate());
+        currentdate= ss.format(d);
         numero=(TextView) findViewById(R.id.Ctelefono);
         email=(TextView) findViewById(R.id.Cemail);
         descripcion=(TextView) findViewById(R.id.CDescripción);
@@ -31,10 +38,12 @@ public class Contactos extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 intento.putExtra("nombre",nombre.getText().toString());
+                intento.putExtra("fecha",currentdate);
                 intento.putExtra("telefono",numero.getText().toString());
                 intento.putExtra("email",email.getText().toString());
                 intento.putExtra("descripcion",descripcion.getText().toString());
                 startActivity(intento);
+
 
             }
         });
