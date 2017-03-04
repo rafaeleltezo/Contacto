@@ -33,10 +33,21 @@ public class Contactos extends AppCompatActivity {
                 intento.putExtra("nombre",nombre.getText().toString());
                 intento.putExtra("telefono",numero.getText().toString());
                 intento.putExtra("email",email.getText().toString());
-                intento.putExtra("descipcion",descripcion.getText().toString());
+                intento.putExtra("descripcion",descripcion.getText().toString());
                 startActivity(intento);
 
             }
         });
+        try {
+            Bundle b=getIntent().getExtras();
+            nombre.setText(b.getString("nombre"));
+            numero.setText(b.getString("numero"));
+            email.setText(b.getString("email"));
+            descripcion.setText(b.getString("descripcion"));
+        }catch (NullPointerException w){
+
+        }
+
     }
+
 }

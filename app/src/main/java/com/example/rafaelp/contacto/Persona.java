@@ -11,41 +11,40 @@ public class Persona extends AppCompatActivity {
     public Intent intento;
     public Bundle b;
     TextView nombre;
+    TextView fecha;
+    TextView numero;
+    TextView email;
+    TextView descripcion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_persona);
         b=getIntent().getExtras();
-        TextView nombre=(TextView)findViewById(R.id.nombre);
-        TextView fecha=(TextView)findViewById(R.id.fecha);
-        TextView numero=(TextView)findViewById(R.id.numero);
-        TextView email=(TextView)findViewById(R.id.email);
-        TextView descripcion =(TextView)findViewById(R.id.descripcion);
-        Button boton=(Button)findViewById(R.id.boton);
+        nombre=(TextView)findViewById(R.id.nombre);
+        fecha=(TextView)findViewById(R.id.fecha);
+        numero=(TextView)findViewById(R.id.numero);
+        email=(TextView)findViewById(R.id.email);
+        descripcion =(TextView)findViewById(R.id.descripcion);
         nombre.setText(b.getString("nombre"));
         numero.setText(b.getString("telefono"));
         email.setText(b.getString("email"));
-        descripcion.setText(b.getString("descipcion"));
+        descripcion.setText(b.getString("descripcion"));
+        Button boton=(Button)findViewById(R.id.boton);
         intento=new Intent(Persona.this,Contactos.class);
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                rellenandoCampos();
-                startActivity(intento);
+               setCampos();
 
             }
         });
 
     }
-    public void rellenandoCampos(){
-        TextView nombre=(TextView) findViewById(R.id.Cnombre);
-        TextView telefono=(TextView) findViewById(R.id.Ctelefono);
-        TextView email=(TextView) findViewById(R.id.Cemail);
-        TextView descripcion=(TextView) findViewById(R.id.CDescripción);
-        nombre.setText(this.nombre.getText().toString());
-        telefono.setText(b.getString("numero"));
-        email.setText(b.getString("email"));
-        descripcion.setText(b.getString("descripcion"));
+    public void setCampos(){
+        intento.putExtra("nombre",nombre.getText().toString());
+        intento.putExtra("numero",numero.getText().toString());
+        intento.putExtra("email",email.getText().toString());
+        intento.putExtra("descripcion",descripcion.getText().toString());
         startActivity(intento);
     }
 }
