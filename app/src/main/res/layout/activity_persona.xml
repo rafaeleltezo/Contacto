@@ -17,7 +17,7 @@
             android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/textoNombre"
+            android:layout_height="@dimen/textoAncho"
             android:textSize="@dimen/textoNombre"
             android:id="@+id/nombre"
             android:textColor="@color/colorPrimary"
